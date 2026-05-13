@@ -21,6 +21,8 @@ import classes from './HeaderMegaMenu.module.css';
 const navLinks = [
   { to: '/', label: 'Home' },
   { to: '/profile', label: 'Profile' },
+  { to: '/url/shortner' , label:'url shortner'},
+  { to: '/My/Urls', label:'MyUrls'}
 ];
 
 export function HeaderMegaMenu() {
@@ -46,7 +48,7 @@ export function HeaderMegaMenu() {
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
           <Text component={Link} to="/" className={classes.logo}>
-            yuktha  <Text component="span">Zero</Text>
+            Being  <Text component="span">Zero</Text>
           </Text>
 
           <Group h="100%" gap={0} visibleFrom="sm">
