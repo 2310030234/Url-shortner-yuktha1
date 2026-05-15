@@ -8,6 +8,10 @@ import connectDB from "./db/dbConnect.js";
 import { config } from "./config.js";
 import authRouter from "./routes/authRouter.js";
 const app = express();
+import userRouter from "./routes/userRouter.js";
+import shortURLRouter from "./routes/shortURLRouter.js";
+
+
 
 // middlewares
 
@@ -30,10 +34,18 @@ connectDB();
 
 
 app.use("/api/auth", authRouter);
-
+app.use("/api/user", userRouter)
+app.use("/api/s", shortURLRouter);
 
 app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 
 app.get("/*name", (req, res) => { res.sendFile(path.join(__dirname, "../../frontend/dist/index.html")) });
 
 app.listen(config.PORT, () => console.log(`Server on PORT: ${config.PORT}`));
+
+
+
+
+
+
+

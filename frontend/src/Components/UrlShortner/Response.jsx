@@ -16,7 +16,8 @@ export default function Response({response}) {
    <div>
     <a href={import.meta.env.VITE_DEV_PROXY+"/api/s/"+response.shortCode}>Click Me</a>
      
-      {"https://url-shortener-bootcamp.onrender.com/api/s/"+response.shortCode}
+      {import.meta.env.VITE_DEV_proxy+"/api/s/"+response.shortCode}
+
    </div>
  )
 }
