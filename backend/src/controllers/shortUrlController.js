@@ -67,7 +67,8 @@ export const redirectToOriginalURL = async (req, res) => {
    if(!shortUrl){
      return res.status(404).json({message : "Short url not found"});
    }
-
+shortUrl.clickCount=shortUrl.clickCount+1;
+   await shortUrl.save();
 
    return res.redirect(shortUrl.originalUrl);
 
